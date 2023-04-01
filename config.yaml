@@ -1,0 +1,16 @@
+# data
+#data_dir: deepfakeDetectorMl\dataset\data\Face_only_data
+#dataset_id: 4044a1080db94b04a42e230952dd5063
+# data
+dataset_path: .
+dataset_output_path: ./video_face_only
+training_dataset_path: ./video_face_only
+metadata_path: ./meta_short.csv
+
+# model training
+lr: 0.001
+num_epochs: 10
+
+# validation
+val_acc_threshold: 0.80
+val_loss_threshold: 0.2
