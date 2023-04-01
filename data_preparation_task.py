@@ -5,8 +5,8 @@ from data_preparation import main_actions
 
 
 def main():
-    task:Task = Task.init(project_name="deepfake_detection_dataset_project",
-                     task_name="data_preparaion", task_type=TaskTypes.data_processing)
+    task:Task = Task.init(project_name="deepfake_detection_project",
+                     task_name="data_preparation", task_type=TaskTypes.data_processing)
     
     clearml_params = {
         "dataset_id":"172511de3915468199f607067af728d1"

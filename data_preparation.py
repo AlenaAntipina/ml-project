@@ -51,7 +51,7 @@ def extract_face(path, output_video_path):
     main_dir = os.getcwd()
     video_name = os.path.splitext(os.path.basename(path))[0]
 
-    outputPath = './datasets/extracted'
+    outputPath = './extracted'
     path_to_save = os.path.join(outputPath, video_name)
 
     # поменять два ифа местами, сначал проверка что видео есть, потом создание файла
@@ -124,7 +124,7 @@ def extract_face(path, output_video_path):
                 total += 1
                 j += 1
 
-        generate_video(os.path.join(main_dir, "datasets/extracted", video_name), video_name, os.path.join(main_dir, output_video_path))
+        generate_video(os.path.join(main_dir, "extracted", video_name), video_name, os.path.join(main_dir, output_video_path))
 
 
 def main_actions(config: AppConfig): 

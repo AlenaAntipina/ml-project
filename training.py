@@ -297,13 +297,7 @@ def main_actions(config: AppConfig):
     print("device: ", device)
     model = Model(2).cuda()
     model.to(device)
-    a,b = model(torch.from_numpy(np.empty((1,20,3,112,112))).type(torch.cuda.FloatTensor))
-    print('CUDA available' if torch.cuda.is_available() else 'CUDA not available')
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    print("device: ", device)
-    model = Model(2).cuda()
-    model.to(device)
-    a,b = model(torch.from_numpy(np.empty((1,20,3,112,112))).type(torch.cuda.FloatTensor))
+    # a,b = model(torch.from_numpy(np.empty((1,20,3,112,112))).type(torch.cuda.FloatTensor))
 
     #learning rate
     lr = config.lr
@@ -322,7 +316,6 @@ def main_actions(config: AppConfig):
     test_accuracy = []
     train_loader, valid_loader = get_data_loaders(config=config)
     for epoch in range(1,num_epochs+1):
-        print("epoch: ", epoch)
         l, acc = train_epoch(epoch,num_epochs,train_loader,model,criterion,optimizer)
         train_loss_avg.append(l)
         train_accuracy.append(acc)
